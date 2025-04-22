@@ -37,6 +37,7 @@ const {
 
 startApp();
 ````
+
 ## Commands
 
 - `start:app` - Start the application server to listen for Cloud Manager events
@@ -45,18 +46,6 @@ startApp();
 - `setup:google` - Setup Google Auth Token
 
 # Setup
-
-## Cloud Manager pipelines data
-
-1. Get Cloud Manager list of pipelines
-2. Generate valid Cloud Manager list of pipelines
-- Details in the [ADOBE.md](docs/setup/ADOBE.md) file.
-
-## Google Auth Token
-
-1. Get Google Auth Credentials
-2. Generate Google Auth Token
-- Details in the [GMAIL.md](docs/setup/GMAIL.md) file.
 
 ## Environment Variables
 - Create a `.env` file in the root folder with the following variables:
@@ -100,11 +89,28 @@ NGROK_DOMAIN=domain-name.ngrok-free.app
 5. Configure Webhook URL as `this-application-URL/webhook`.
 
 - Optional: For local testing, you can use ngrok to expose your local server to the internet.
-- Optional: For exploring the events in developer console you need to add `OAuth credentials` and `I/O Management API`
+- Optional: For exploring the events in developer console, you need to add `OAuth credentials` and `I/O Management API`
+
+## Cloud Manager pipelines data (optional)
+
+- Only needed for more details about the pipeline.
+
+1. Get a Cloud Manager list of pipelines
+2. Generate valid Cloud Manager list of pipelines
+- Details in the [ADOBE.md](docs/setup/ADOBE.md) file.
+
+## Google Auth Token (optional)
+
+- Only needed if you want to send notifications via email.
+
+1. Get Google Auth Credentials
+2. Generate Google Auth Token
+- Details in the [GMAIL.md](docs/setup/GMAIL.md) file.
 
 # Testing
-0. Setup testing slack/teams channel
-1. Start the application and ngrok in separate terminals:
+
+1. Setup testing slack/teams channel
+2. Start the application and ngrok in separate terminals:
 ```
 cm-notify start:app
 ```
@@ -134,5 +140,3 @@ curl -X POST https://<ngrok-url>/webhook \
   }
 }'
 ```
-
-
