@@ -1,0 +1,19 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "main": "cli.test.js",
+  "scripts": {
+    "start:app": "cm-notify start:app",
+    "start:ngrok": "cm-notify start:ngrok",
+    "setup:google": "cm-notify setup:google",
+    "setup:adobe": "cm-notify setup:adobe"
+
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@netcentric/cm-notify": "file:.."
+  }
+}

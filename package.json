@@ -1,0 +1,46 @@
+{
+  "name": "@netcentric/cm-notify",
+  "version": "1.0.0",
+  "description": "Adobe Cloud Manager Pipeline Notifications to Slack, Teams and Email",
+  "license": "Apache-2.0",
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/netcentric/cm-notify"
+  },
+  "main": "./index.js",
+  "bin": {
+    "cm-notify": "./cli/index.js"
+  },
+  "scripts": {
+    "start": "node ./cli/index.js start",
+    "start:app": "node ./cli/index.js start:app",
+    "start:ngrok": "node ./cli/index.js start:ngrok",
+    "setup:google": "node ./cli/index.js setup:google",
+    "setup:adobe": "node ./cli/index.js setup:adobe",
+    "test": "echo \"Error: no test specified\""
+  },
+  "dependencies": {
+    "@netcentric/cm-notify-core": "^1.0.2",
+    "dotenv": "16.5.0",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "express-session": "^1.18.1",
+    "google-auth-library": "^9.15.1"
+  },
+  "devDependencies": {
+    "@ngrok/ngrok": "^1.4.1"
+  },
+  "keywords": [
+    "Cloud Manager",
+    "Notifications",
+    "Slack",
+    "Teams",
+    "Email",
+    "Adobe",
+    "Pipelines"
+  ]
+}
