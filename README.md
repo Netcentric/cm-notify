@@ -116,7 +116,23 @@ cm-notify start:ngrok
 ```
 curl -X POST https://<ngrok-url>/webhook \
 -H "Content-Type: application/json" \
--d '<event-json>'
+-d '{
+  "recipient_client_id": "123",
+  "event": {
+    "@id": "urn:oeid:cloudmanager:123",
+    "@type": "https://ns.adobe.com/experience/cloudmanager/event/ended",
+    "activitystreams:published": "2025-04-10T20:06:36.662Z",
+    "activitystreams:to": {
+      "@type": "xdmImsOrg",
+      "xdmImsOrg:id": "123@AdobeOrg"
+    },
+    "activitystreams:object": {
+      "@id": "https://cloudmanager.adobe.io/api/program/123/pipeline/456/execution/789",
+      "@type": "https://ns.adobe.com/experience/cloudmanager/pipeline-execution"
+    },
+    "xdmEventEnvelope:objectType": "https://ns.adobe.com/experience/cloudmanager/pipeline-execution"
+  }
+}'
 ```
 
 
