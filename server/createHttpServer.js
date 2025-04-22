@@ -1,22 +1,25 @@
 const { createServer } = require('node:http');
 
+/**
+ * Create an HTTP server.
+ * @param app
+ * @param serverPort
+ */
 function createHttpServer(app, serverPort) {
   /**
-   * Get port from environment and store in Express.
+   * Get port from the environment and store in Express.
    */
   const port = normalizePort(serverPort);
   app.set('port', port);
 
   /**
-   * Create HTTP server.
+   * Create an HTTP server.
    */
-
   const server = createServer(app);
 
   /**
    * Listen on provided port, on all network interfaces.
    */
-
   server.listen(port);
   server.on('error', onError);
   server.on('listening', onListening);
@@ -24,7 +27,6 @@ function createHttpServer(app, serverPort) {
   /**
    * Normalize a port into a number, string, or false.
    */
-
   function normalizePort(val) {
     const port = parseInt(val, 10);
 
@@ -44,7 +46,6 @@ function createHttpServer(app, serverPort) {
   /**
    * Event listener for HTTP server "error" event.
    */
-
   function onError(error) {
     if (error.syscall !== 'listen') {
       throw error;
@@ -72,7 +73,6 @@ function createHttpServer(app, serverPort) {
   /**
    * Event listener for HTTP server "listening" event.
    */
-
   function onListening() {
     const addr = server.address();
     const bind = typeof addr === 'string'
