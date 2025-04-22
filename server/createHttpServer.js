@@ -4,7 +4,7 @@ function createHttpServer(app, serverPort) {
   /**
    * Get port from environment and store in Express.
    */
-  const port = normalizePort(serverPort || process.env.PORT || '4000');
+  const port = normalizePort(serverPort);
   app.set('port', port);
 
   /**

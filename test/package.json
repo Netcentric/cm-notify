@@ -7,7 +7,6 @@
     "start:ngrok": "cm-notify start:ngrok",
     "setup:google": "cm-notify setup:google",
     "setup:adobe": "cm-notify setup:adobe"
-
   },
   "keywords": [],
   "author": "",

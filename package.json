@@ -16,11 +16,6 @@
     "cm-notify": "./cli/index.js"
   },
   "scripts": {
-    "start": "node ./cli/index.js start",
-    "start:app": "node ./cli/index.js start:app",
-    "start:ngrok": "node ./cli/index.js start:ngrok",
-    "setup:google": "node ./cli/index.js setup:google",
-    "setup:adobe": "node ./cli/index.js setup:adobe",
     "test": "echo \"Error: no test specified\""
   },
   "dependencies": {

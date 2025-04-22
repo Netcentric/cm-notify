@@ -32,7 +32,7 @@ router.post('/', async (req, res, next) => {
   try {
     isValidEvent = await cmNotify.post(req.body);
   } catch (error) {
-    console.error('Error posting notification:', error);
+    console.error('Error posting notification:', error.message);
     res.status(400);
     next({ error: error.message });
     return '';

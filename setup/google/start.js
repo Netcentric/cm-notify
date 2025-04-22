@@ -1,4 +1,3 @@
-require('dotenv').config();
 const app = require('./app');
 const { createHttpServer } = require('../../server/createHttpServer');
 const { openUrl } = require('./utils');

@@ -6,6 +6,7 @@ const {
   setupGoogle,
   setupAdobe
 } = require('../index');
+const { DEFAULT_CONFIG } = require('../config');
 
 console.log('Starting cli...');
 
@@ -28,7 +29,7 @@ switch (scriptName) {
     break;
   case 'start:ngrok':
     console.log('Starting ngrok...');
-    startNgrok().catch(console.error);
+    startNgrok(DEFAULT_CONFIG.port, DEFAULT_CONFIG.ngrokDomain).catch(console.error);
     process.stdin.resume();
     break;
   case 'setup:google':

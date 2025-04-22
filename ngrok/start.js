@@ -1,12 +1,10 @@
 const ngrok = require('@ngrok/ngrok');
 
-require('dotenv').config();
-
-async function startNgrok() {
+async function startNgrok(port, domain) {
   try {
     const listener = await ngrok.connect({
-      addr: 4000,
-      domain: process.env.NGROK_DOMAIN,
+      addr: port,
+      domain,
       authtoken_from_env: true,
       request_header_add: ['ngrok-skip-browser-warning: true'],
       onLogRequest: (req) => {
@@ -19,7 +17,7 @@ async function startNgrok() {
 
     const url = listener.url();
     console.log('Ngrok connection established');
-    console.log(`Domain: ${process.env.NGROK_DOMAIN}`);
+    console.log(`Domain: ${domain}`);
     console.log(`URL: ${url}`);
   } catch (error) {
     console.error('Ngrok startup error:', error.message);
