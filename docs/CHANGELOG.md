@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/netcentric/cm-notify/compare/v1.0.0...v1.0.1) (2025-04-23)
+
+
+### Bug Fixes
+
+* update dependencies ([b25b6ba](https://github.com/netcentric/cm-notify/commit/b25b6ba65cdeadc43d5e0c01869b08fed5ff82b0))
+
 # 1.0.0 (2025-04-22)
 
 
