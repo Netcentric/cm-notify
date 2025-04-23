@@ -1,4 +1,4 @@
-const { CMUtils } = require('@netcentric/cm-notify-core');
+const { CMUtils } = require('../../utils/index');
 
 const getOrg = (pipelinesJson) => {
   const pageUrl = pipelinesJson._links.page;

@@ -1,5 +1,5 @@
 const app = require('./app');
-const { createHttpServer } = require('../../server/createHttpServer');
+const { createHttpServer } = require('./createHttpServer');
 const { openUrl } = require('./utils');
 
 const setupGoogle = () => {

@@ -30,7 +30,7 @@ router.get('/', (req, res, next) => {
 router.post('/', async (req, res, next) => {
   let isValidEvent;
   try {
-    isValidEvent = await cmNotify.post(req.body);
+    isValidEvent = await cmNotify.post(req);
   } catch (error) {
     console.error('Error posting notification:', error.message);
     res.status(400);

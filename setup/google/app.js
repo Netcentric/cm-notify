@@ -1,4 +1,4 @@
-const crypto = require('crypto');
+const crypto = require('node:crypto');
 const express = require('express');
 const session = require('express-session');
 const indexRouter = require('./routes/index');

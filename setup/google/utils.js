@@ -1,14 +1,4 @@
 const { exec } = require('child_process');
-const { CMUtils } = require('@netcentric/cm-notify-core');
-
-function getCredentials() {
-  const credentials = CMUtils.getJsonData('google-credentials.json');
-  if (!credentials || !credentials?.installed?.client_id) {
-    return {};
-  }
-  const { client_id, client_secret, redirect_uris } = credentials.installed;
-  return { client_id, client_secret, redirect_uris };
-}
 
 const openUrl = (url) => {
   let command;
@@ -60,4 +50,4 @@ const stopServer = (req, runningServer) => {
 }
 
 
-module.exports = { getCredentials, openUrl, handleErrorSimple, stopServer };
+module.exports = { openUrl, handleErrorSimple, stopServer };

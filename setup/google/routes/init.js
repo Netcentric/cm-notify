@@ -1,17 +1,16 @@
 const { randomBytes} = require('node:crypto');
 const express = require('express');
-const { getAuthUrl } = require('../getAuthUrl');
-const { DEFAULT_CONFIG } = require('../../../config');
+const { OAuth2Client } = require('@netcentric/cm-notify-core/core/auth');
 
 const router = express.Router();
 
 router.get('/', function(req, res, next) {
-  console.log('GET init');
+  const oauth2Client = new OAuth2Client();
   // Generate a secure random state value.
   const state = randomBytes(32).toString('hex');
   // Store state in the session
   req.session.state = state;
-  const authUrl = getAuthUrl(state, DEFAULT_CONFIG.fromEmail);
+  const authUrl = oauth2Client.getAuthUrl(state);
   req.session.authUrl = authUrl;
   res.redirect(authUrl);
 });
