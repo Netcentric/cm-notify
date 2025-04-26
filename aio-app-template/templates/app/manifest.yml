@@ -1,0 +1,24 @@
+packages:
+  cm-notify-app:
+    actions:
+      cm-notify:
+        function: actions/cm-notify/index.js
+        runtime: nodejs:22
+        web: false
+    events:
+      pipeline-started:
+        source: com.adobe.cloudmanager
+        event: aem.pipeline.execution.started
+        action: cm-notify
+      pipeline-ended:
+        source: com.adobe.cloudmanager
+        event: aem.pipeline.execution.ended
+        action: cm-notify
+      step-error:
+        source: com.adobe.cloudmanager
+        event: aem.pipeline.execution.step.error
+        action: cm-notify
+      step-waiting:
+        source: com.adobe.cloudmanager
+        event: aem.pipeline.execution.step.waiting
+        action: cm-notify

@@ -1,0 +1,19 @@
+extensions:
+  cm-notify-ext:
+    operations:
+      - operation: pipeline-started
+        type: action
+        impl: actions/cm-notify/index.js
+      - operation: pipeline-ended
+        type: action
+        impl: actions/cm-notify/index.js
+      - operation: step-error
+        type: action
+        impl: actions/cm-notify/index.js
+      - operation: step-waiting
+        type: action
+        impl: actions/cm-notify/index.js
+    runtimeManifest:
+      packages:
+        cm-notify-app:
+          license: Apache-2.0
