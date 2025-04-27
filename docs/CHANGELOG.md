@@ -1,3 +1,15 @@
+# [1.1.0](https://github.com/netcentric/cm-notify/compare/v1.0.1...v1.1.0) (2025-04-27)
+
+
+### Bug Fixes
+
+* add test command ([9e7b25d](https://github.com/netcentric/cm-notify/commit/9e7b25d7e8f93d79217785e1e151a2cef7d7944f))
+
+
+### Features
+
+* add aio template ([7b059f3](https://github.com/netcentric/cm-notify/commit/7b059f35c16d024df35de0a39b8ed281e7779c48))
+
 ## [1.0.1](https://github.com/netcentric/cm-notify/compare/v1.0.0...v1.0.1) (2025-04-23)
 
 
