@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/netcentric/cm-notify/compare/v1.1.0...v1.1.1) (2025-04-27)
+
+
+### Bug Fixes
+
+* add aio init cli ([5dafd2f](https://github.com/netcentric/cm-notify/commit/5dafd2f4ecf0398d0a5bdfc3b413a15eae20dd46))
+
 # [1.1.0](https://github.com/netcentric/cm-notify/compare/v1.0.1...v1.1.0) (2025-04-27)
 
 
