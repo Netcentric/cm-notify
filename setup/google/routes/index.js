@@ -1,11 +1,10 @@
 const express = require('express');
-const { OAuth2Client } = require('@netcentric/cm-notify-core/core/auth');
+const { AuthClient } = require('../auth');
 const { handleErrorSimple, stopServer } = require('../utils');
 
 const router = express.Router();
 
 router.get('/', function(req, res, next) {
-  const oAuth2Client = new OAuth2Client();
   // Verify state to prevent CSRF attacks
   if (req.query.state !== req.session.state) {
     return handleErrorSimple('Invalid state parameter', res, next);
@@ -24,12 +23,13 @@ router.get('/', function(req, res, next) {
   }
 
   console.log('Code received: ', req.query.code.length);
+  const oAuth2Client = new AuthClient();
   oAuth2Client.saveTokenFromCode(req.query.code)
     .then((token) => {
       if (!token) {
         return handleErrorSimple('Empty token', res, next);
       }
-      console.log('Token received: ', token.expiry_date);
+      console.log('Token received. expires_at: ', token.expires_at);
       return token;
     })
     .then(() => {

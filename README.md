@@ -44,6 +44,7 @@ startApp();
 - `start:ngrok` - Start ngrok
 - `setup:adobe` - Setup Adobe Cloud Manager pipelines data
 - `setup:google` - Setup Google Auth Token
+- `test` - Post test event to the local webhook
 
 # Setup
 
@@ -73,7 +74,7 @@ TEAMS_EMAIL=email.onmicrosoft.com@amer.teams.ms
 EMAIL_FROM=gmailuser@googleworkspacedomain.com
 # App env (optional)
 PORT=4000# port to run the application, default is 4000
-DATA_PATH=./data# path to the data folder wher tokens are stored, default is ./data
+DATA_PATH=./.data# path to the data folder wher tokens are stored, default is ./.data
 # Ngrok env (optional)
 # Only needed if ngrok is used for local testing
 NGROK_AUTHTOKEN=123
@@ -110,33 +111,14 @@ NGROK_DOMAIN=domain-name.ngrok-free.app
 # Testing
 
 1. Setup testing slack/teams channel
-2. Start the application and ngrok in separate terminals:
+2. Configure `.env` file
+3. Add `.data` files
+4. Setup Google and Adobe files
+5. Start the application:
 ```
 cm-notify start:app
 ```
+6. Post a test event to the local webhook
 ```
-cm-notify start:ngrok
-```
-
-2. Post a test event to the ngrok URL:
-```
-curl -X POST https://<ngrok-url>/webhook \
--H "Content-Type: application/json" \
--d '{
-  "recipient_client_id": "123",
-  "event": {
-    "@id": "urn:oeid:cloudmanager:123",
-    "@type": "https://ns.adobe.com/experience/cloudmanager/event/ended",
-    "activitystreams:published": "2025-04-10T20:06:36.662Z",
-    "activitystreams:to": {
-      "@type": "xdmImsOrg",
-      "xdmImsOrg:id": "123@AdobeOrg"
-    },
-    "activitystreams:object": {
-      "@id": "https://cloudmanager.adobe.io/api/program/123/pipeline/456/execution/789",
-      "@type": "https://ns.adobe.com/experience/cloudmanager/pipeline-execution"
-    },
-    "xdmEventEnvelope:objectType": "https://ns.adobe.com/experience/cloudmanager/pipeline-execution"
-  }
-}'
+cm-notify test
 ```

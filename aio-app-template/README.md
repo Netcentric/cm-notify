@@ -1,6 +1,6 @@
-# AppBuilderDemoApp
+# CMNotifyApp
 
-Welcome to my Adobe I/O Application!
+CMNotify Adobe I/O Application!
 
 ## Setup
 

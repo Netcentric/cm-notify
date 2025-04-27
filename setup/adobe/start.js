@@ -1,4 +1,4 @@
-const { CMUtils } = require('../../utils/index');
+const { CMUtils } = require('@netcentric/cm-notify-core');
 
 const getOrg = (pipelinesJson) => {
   const pageUrl = pipelinesJson._links.page;
@@ -7,25 +7,22 @@ const getOrg = (pipelinesJson) => {
 }
 
 const setupAdobe = () => {
-  let data = [];
   const list = CMUtils.getJsonData('pipelines.json');
   const pipelines = list?._embedded?.pipelines;
   if (!pipelines) {
     console.error('No pipelines found in the list.');
     return;
-  } else {
-    data.list = pipelines.map((pipeline) => {
-      return {
-        name: pipeline.name,
-        id: pipeline.id,
-        buildTarget: pipeline.buildTarget,
-        status: pipeline.status,
-        type: pipeline.type,
-      }
-    }).filter((item) => {
-      return item.buildTarget !== 'CODE_QUALITY';
-    });
   }
+  const data = pipelines.map((pipeline) => {
+    return {
+      name: pipeline.name,
+      id: pipeline.id,
+      buildTarget: pipeline.buildTarget,
+      type: pipeline.type,
+    }
+  }).filter((item) => {
+    return item.buildTarget !== 'CODE_QUALITY';
+  });
   console.log('Pipelines List: ', data.length);
   const pipelinesFile = CMUtils.getJsonDataFilePath('pipelines-data.json');
   CMUtils.saveJsonData(pipelinesFile, data);

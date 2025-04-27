@@ -1,7 +1,7 @@
-require('dotenv').config();
+const { CMUtils } = require('@netcentric/cm-notify-core');
 
 const DEFAULT_CONFIG = {
-  fromEmail: process.env.EMAIL_FROM,
+  fromEmail: CMUtils.getDefaultConfig().fromEmail,
   ngrokDomain: process.env.NGROK_DOMAIN,
   port: process.env.PORT || 4000,
 }

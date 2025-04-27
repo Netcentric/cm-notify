@@ -4,7 +4,8 @@ const {
   startApp,
   startNgrok,
   setupGoogle,
-  setupAdobe
+  setupAdobe,
+  postTestEvent
 } = require('../index');
 const { DEFAULT_CONFIG } = require('../config');
 
@@ -39,6 +40,10 @@ switch (scriptName) {
   case 'setup:adobe':
     console.log('Setup Adobe ...');
     setupAdobe();
+    break;
+  case 'test':
+    console.log('Post Test Event ...');
+    postTestEvent();
     break;
   default:
     console.log(`Unknown command: ${scriptName}`);
