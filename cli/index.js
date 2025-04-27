@@ -5,7 +5,8 @@ const {
   startNgrok,
   setupGoogle,
   setupAdobe,
-  postTestEvent
+  postTestEvent,
+  initAioAppTemplate
 } = require('../index');
 const { DEFAULT_CONFIG } = require('../config');
 
@@ -21,6 +22,7 @@ if (!args.length) {
 }
 
 const scriptName = args[0];
+const otherArgs = args.slice(1);
 
 switch (scriptName) {
   case 'start':
@@ -44,6 +46,10 @@ switch (scriptName) {
   case 'test':
     console.log('Post Test Event ...');
     postTestEvent();
+    break;
+  case 'aio:init':
+    console.log('Init aio template ...');
+    initAioAppTemplate(...otherArgs);
     break;
   default:
     console.log(`Unknown command: ${scriptName}`);

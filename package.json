@@ -25,7 +25,9 @@
     }
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\""
+    "test": "echo \"Error: no test specified\"",
+    "build": "esbuild ./aio-app/src/index.js --bundle --minify --platform=node --target=node22 --outfile=./aio-app/template/actions/cm-notify/index.js",
+    "template": "aio app init --template ./aio-app/template --no-install"
   },
   "dependencies": {
     "@netcentric/cm-notify-core": "^1.0.12",
@@ -33,7 +35,11 @@
     "express-session": "1.18.1"
   },
   "devDependencies": {
-    "@ngrok/ngrok": "1.5.0"
+    "@ngrok/ngrok": "1.5.0",
+    "esbuild": "^0.25.3"
+  },
+  "peerDependencies": {
+    "@adobe/aio-cli": "^10.3.4"
   },
   "keywords": [
     "Cloud Manager",

@@ -7,7 +7,8 @@
     "start:ngrok": "cm-notify start:ngrok",
     "setup:google": "cm-notify setup:google",
     "setup:adobe": "cm-notify setup:adobe",
-    "test": "node ./event.js"
+    "test": "cm-notify test",
+    "template": "cm-notify aio:init ./app"
   },
   "keywords": [],
   "author": "",
